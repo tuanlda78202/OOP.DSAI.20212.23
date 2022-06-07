@@ -1,11 +1,11 @@
 # SAGUI - Sorting Algorithms GUI
 ![SAGUI](https://github.com/tuanlda78202/OOP.DSAI.20212.Team23/blob/main/materials/SAGUI.png)
 
-**Overview**: Array is the most basic structure of computer science. Most operations as well as other data structures are built and performed on an array. In this project, we will make an application to explain three sorting algorithms on an array: **bubble sort, heap sort, and shell sort**.
+**Overview**: Array is the most basic structure of computer science. Most operations as well as other data structures are built and performed on an array. In this project, we make an application GUI to explain three sorting algorithms on an array: [bubble sort](https://www.geeksforgeeks.org/bubble-sort/), [heap sort](https://www.geeksforgeeks.org/heap-sort/), [shell sort](https://www.geeksforgeeks.org/shellsort/)
 
 **Specifications**:
 
-- GUI:  you can freely design your own GUI. However, since the basic aim of the project is to develop an application based on OOP, focusing on the interface is not required.
+- GUI:  Freely design own GUI. However, since the basic aim of the project is to develop an application based on OOP, focusing on the interface is not required.
     
     - [Sorting (Bubble, Selection, Insertion, Merge, Quick, Counting, Radix)](https://visualgo.net/en/sorting)
     

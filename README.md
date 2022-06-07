@@ -1,4 +1,5 @@
 # SAGUI - Sorting Algorithms GUI
+![SAGUI](https://github.com/tuanlda78202/OOP.DSAI.20212.Team23/blob/main/materials/SAGUI.png)
 
 **Overview**: Array is the most basic structure of computer science. Most operations as well as other data structures are built and performed on an array. In this project, we will make an application to explain three sorting algorithms on an array: **bubble sort, heap sort, and shell sort**.
 

@@ -40,7 +40,7 @@
 | Le Duc Anh Tuan              | 20204929         | tuan.lda204929@sis.hust.edu.vn            |
 | Nguyen Anh Tuan             | 20204930         | tuan.na204930@sis.hust.edu.vn            |
 | Bui Thanh Tung             | 20204931         | tung.bt204931@sis.hust.edu.vn|
-| Dao Van Tung       | 20204932         | tung.dv4932@sis.hust.edu.vn              |
+| Dao Van Tung       | 20204932         | tung.dv204932@sis.hust.edu.vn              |
 
 ## Announcements
 All older announcements can be found in `ANNOUNCEMENTS.md`

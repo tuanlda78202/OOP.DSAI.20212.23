@@ -32,7 +32,9 @@
 - `src`: Store source code
   - `src/data`: Data 
   - `src/sorting`: Sorting
-  - `src/visualization`: Visualization GUI 
+  - `src/visualization`: Visualization GUI
+- `workflow.md`: GitHub WorkFlow
+- `ANNOUNCEMENTS.md`: All older announcements
   
 ## Collaborators 
 | Name                         | Student ID       | Email                                      |
@@ -41,6 +43,3 @@
 | Nguyen Anh Tuan             | 20204930         | tuan.na204930@sis.hust.edu.vn            |
 | Bui Thanh Tung             | 20204931         | tung.bt204931@sis.hust.edu.vn|
 | Dao Van Tung       | 20204932         | tung.dv204932@sis.hust.edu.vn              |
-
-## Announcements
-All older announcements can be found in `ANNOUNCEMENTS.md`

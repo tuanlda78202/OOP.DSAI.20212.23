@@ -1,5 +1,5 @@
 # GitHub WorkFlow
-
+![https://nvie.com/img/git-model@2x.png](https://nvie.com/img/git-model@2x.png)
 # Decentralized but centralized
 
 The repository setup that we use and that works well with this branching model, is that with a central “truth” repo. Note that this repo is only *considered* to be the central one (since Git is a DVCS, there is no such thing as a central repo at a technical level). We will refer to this repo as `origin`, since this name is familiar to all Git users.

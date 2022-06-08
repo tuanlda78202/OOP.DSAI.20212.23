@@ -4,7 +4,6 @@ import SortingVisualizer.Visualizer.ManipulateVisualizer;
 
 public class AbsSort implements swap {
 
-    private ManipulateVisualizer manipulateVisualizer;
 
     private int length;
     private int[] array;
@@ -46,7 +45,7 @@ public class AbsSort implements swap {
     }
 
     public void sort(int start, int end) {
-        System.out.println("Sort ...");
+        System.out.println("Sort");
     }
 
     public boolean isIsSorting() {

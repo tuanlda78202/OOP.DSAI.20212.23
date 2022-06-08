@@ -79,7 +79,7 @@ public class AbsSort implements swap {
         array[i1] = array[i2];
         array[i2] = tmp;
 
-        getManipulateVisualizer().updateArrayAccessed(4);
+        getManipulateVisualizer().updateArrayAccessed();
     }
 
 }

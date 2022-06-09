@@ -35,6 +35,9 @@
   - `src/visualization`: Visualization GUI
 - `workflow.md`: GitHub WorkFlow
 - `ANNOUNCEMENTS.md`: All older announcements
+
+## Branching Model 
+![Branching Model](https://github.com/tuanlda78202/OOP.DSAI.20212.Team23/blob/main/materials/bm.png)
   
 ## Collaborators 
 | Name                         | Student ID       | Email                                      |

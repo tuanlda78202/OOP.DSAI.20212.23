@@ -6,9 +6,6 @@ public class AbsSort implements swap {
 
     private ManipulateVisualizer manipulateVisualizer;
 
-
-    faf
-
     private int length;
     private int[] array;
     private boolean isSorting;

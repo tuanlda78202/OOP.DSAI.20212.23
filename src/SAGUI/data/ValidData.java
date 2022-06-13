@@ -1,7 +1,8 @@
 // author @tuanlda78202
+
 package SAGUI.data;
 
-public class valid {
+public class ValidData {
     // Check Empty
     // trim() eliminates leading and trailing spaces
     public boolean checkNullOrEmpty(String str) { 

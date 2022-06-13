@@ -1,3 +1,5 @@
+// author @tuanlda78202
+
 package SAGUI.sorting;
 
 public interface swap {

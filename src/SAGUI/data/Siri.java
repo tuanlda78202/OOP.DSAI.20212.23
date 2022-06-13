@@ -1,10 +1,11 @@
 // author @tuanlda78202
+
 package SAGUI.data;
 
-public class support { 
+public class Siri { 
 
     // Constructor 
-    public support() {
+    public Siri() {
     }
 
     // Delete New Line Tab Spaces

@@ -1,6 +1,8 @@
+// author @tuanlda78202
+
 package SAGUI.sorting;
 
-import SortingVisualizer.Visualizer.ManipulateVisualizer;
+import SAGUI.visualization.ManipulateVisualizer;
 
 public class AbsSort implements swap {
 
@@ -8,7 +10,7 @@ public class AbsSort implements swap {
 
     private int length;
     private int[] array;
-    private boolean isSorting;
+    private boolean isSorting; 
     private boolean isPause;
     private boolean isStop;
 
@@ -20,7 +22,7 @@ public class AbsSort implements swap {
         this.manipulateVisualizer = manipulateVisualizer;
     }
 
-    public SortingAlgorithms(int length, int[] array, boolean isSorting, boolean isPause, boolean isStop, ManipulateVisualizer mv) {
+    public AbsSort(int length, int[] array, boolean isSorting, boolean isPause, boolean isStop, ManipulateVisualizer mv) {
         this.length = length;
         this.array = array;
         this.isSorting = isSorting;
@@ -79,7 +81,7 @@ public class AbsSort implements swap {
         array[i1] = array[i2];
         array[i2] = tmp;
 
-        getManipulateVisualizer().updateArrayAccessed(4);
+        getManipulateVisualizer().updateArrayAccessed(5);
     }
 
 }

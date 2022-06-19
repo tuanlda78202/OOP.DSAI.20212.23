@@ -2,8 +2,8 @@
 
 package SAGUI.visualization;
 
-import SAGUI.sata.support;
-import SAGUI.sata.valid;
+import SAGUI.data.Siri;
+import SAGUI.data.ValidData;
 
 import java.awt.Color;
 import java.awt.Insets;
@@ -34,8 +34,8 @@ import javax.swing.event.DocumentListener;
 
 public class ManipulateVisualizer {
 
-    ValidateData validator = new ValidateData();
-    Helpers helpers = new Helpers();
+    ValidData validator = new ValidData();
+    Siri helpers = new Siri();
     //private ManipulateSortingProcess manipulateSortingProcess;
 
     GraphVisualizer canvas;

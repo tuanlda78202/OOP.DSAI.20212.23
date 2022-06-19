@@ -59,9 +59,8 @@ public class ManipulateVisualizer {
 
     private final String ABOUT_MESSAGE = "Sorting Visualizer\n\n"
             + "This program is built to help you visualize some of sorting algorithms namely: Bubble sort, Heap sort, Shell sort.\n\n"
-            + "We will keep developing with another algorithms in the future.\n\n"
             + "Thank you for using our program \u2665\n\n"
-            + "(c) Copyright by OOLT.ICT.20212.Team23";
+            + "(c) Copyright by OOP.DSAI.20212.Team23";
     private final String HELP_INSTRUCTION_MESSAGE = "Here is the instruction of program:\n"
             + "1. Step 1: Generate Data.\n"
             + "In Data pane, you can generate the data by two ways:\n"

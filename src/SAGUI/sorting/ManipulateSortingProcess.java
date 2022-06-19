@@ -16,7 +16,7 @@ public class ManipulateSortingProcess {
     private boolean isStop;
 
     private int speed;
-    private int curAlg; // 0 for bubble, 1 for quick, 2 for insertion
+    private int curAlg;
 
     public int getCurrent() {
         return current;
@@ -135,19 +135,9 @@ public class ManipulateSortingProcess {
         if (manipulateVisualizer.isIsSorting()) {
             try {
                 switch (curAlg) {
-                    case 0: // bubble sort
+                    case 0: // Bubble sort
                         BubbleSort bubbleSort = new BubbleSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         bubbleSort.sort(0, length - 1);
-                        break;
-                    case 1:  //quick sort
-                        //isStop = false;
-                        setIsStop(false);
-                        QuickSort quickSort = new QuickSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
-                        quickSort.sort(0, length - 1);
-                        break;
-                    default: // insertion sort
-                        InsertionSort insertionSort = new InsertionSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
-                        insertionSort.sort(0, length - 1);
                         break;
                 }
             } catch (IndexOutOfBoundsException e) {

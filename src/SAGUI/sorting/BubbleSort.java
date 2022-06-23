@@ -22,7 +22,7 @@ public class BubbleSort extends AbsSort {
         this.check = check;
     }
 
-    public bubble(int length, int[] array, boolean isSorting, boolean isPause, boolean isStop, ManipulateVisualizer mv) {
+    public BubbleSort(int length, int[] array, boolean isSorting, boolean isPause, boolean isStop, ManipulateVisualizer mv) {
         super(length, array, isSorting, isPause, isStop, mv);
     }
 

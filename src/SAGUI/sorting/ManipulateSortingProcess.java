@@ -135,11 +135,11 @@ public class ManipulateSortingProcess {
         if (manipulateVisualizer.isIsSorting()) {
             try {
                 switch (curAlg) {
-                    case 0: // Bubble sort
+                    default: // Bubble sort
                         BubbleSort bubbleSort = new BubbleSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         bubbleSort.sort(0, length - 1);
                         break;
-                }
+                } 
             } catch (IndexOutOfBoundsException e) {
                 System.out.println(e.getMessage());
             }

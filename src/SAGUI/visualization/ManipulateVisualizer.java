@@ -84,11 +84,11 @@ public class ManipulateVisualizer {
     private String[] genDataOptions = {"Random", "Manual input"};
     private String[] helpGenDataMsg = {
         "You should input a positive integer for array length which have min = 2 and max = 300!",
-        "You should input an array with 2-300 elements contains only positive integers that seperated by comma and wrapped by square brackets"};
+        "You should input an array with 2-300 elements contains only positive integers that separated by comma and wrapped by square brackets"};
     private String[] algorithmOptions = {"Bubble sort", "Heap sort", "Shell sort"};
     private String[] algorithmListInfo = {"Best Case: O(n)\nWorst Case: O(n^2)\nAverage: O(n^2)",
-        "Best Case: O(nlogn)\nWorst Case: O(n^2)\nAverage: O(nlogn)",
-        "Best Case: O(n)\nWorst Case: O(n^2)\nAverage: O(n^2)"};
+        "Best Case: O(nlogn)\nWorst Case: O(nlogn)\nAverage: O(nlogn)",
+        "Best Case: O(nlogn)\nWorst Case: O(n^2)\nAverage: O(nlogn)"};
 
     // FRAME
     private JFrame jframe;

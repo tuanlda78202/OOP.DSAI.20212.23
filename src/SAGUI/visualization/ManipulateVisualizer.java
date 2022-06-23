@@ -71,7 +71,7 @@ public class ManipulateVisualizer {
             + "In Control pane, you can choose sorting algorithm in the combo box 'Choose algorithm'.\n"
             + "3. Step 3: Manipulate sorting process\n"
             + "You can manipulate the sorting process with start, pause, stop, resume actions.\n"
-            + "You also can change the speed of process by slide a slider of Delay.\n\n"
+            + "You also can change the speed of process by slide a slider of Delay.\n\n";
 
     private static final int MAX_ARRAY_LENGTH = 300;
     private String displayTextArea = "[\n \n]";
@@ -571,8 +571,8 @@ public class ManipulateVisualizer {
                 btnStartSort.setEnabled(false);
 
                 String curInput = arrayLengthInput.getText();
-                if (!validator.isNullOrEmpty(curInput)) {
-                    if (validator.isNumber(curInput)) {
+                if (!validator.checkNullOrEmpty(curInput)) {
+                    if (validator.checkNumber(curInput)) {
                         int arrLength = Integer.parseInt(curInput);
                         if (arrLength > 1) {
                             if (arrLength <= 300) {
@@ -606,7 +606,7 @@ public class ManipulateVisualizer {
 
             private void showErrorMsg(String errorMsg) {
                 arrayLengthErrorLabel.setText(errorMsg);
-                btnGenerateArray.setEnabled(validator.isNullOrEmpty(errorMsg) ? true : false);
+                btnGenerateArray.setEnabled(validator.checkNullOrEmpty(errorMsg) ? true : false);
             }
         });
 
@@ -640,7 +640,7 @@ public class ManipulateVisualizer {
 
                 String curInput = inputArrayArea.getText();
                 try {
-                    int[] arr = helpers.StringToIntArray(helpers.RemoveNewLineTabSpaces(curInput), ",");
+                    int[] arr = helpers.StrToArr(helpers.deleteNewLineTabSpaces(curInput), ",");
                     if (arr.length > 1 && arr.length <= 300) {
                         showErrorMsg("");
                         displayTextArea = curInput;
@@ -661,7 +661,7 @@ public class ManipulateVisualizer {
 
             private void showErrorMsg(String errorMsg) {
                 arrayLengthErrorLabel.setText(errorMsg);
-                btnGenerateArray.setEnabled(validator.isNullOrEmpty(errorMsg) ? true : false);
+                btnGenerateArray.setEnabled(validator.checkNullOrEmpty(errorMsg) ? true : false);
             }
         });
 
@@ -711,7 +711,7 @@ public class ManipulateVisualizer {
                     case 1: // manual input
                         int[] newArr;
                         try {
-                            newArr = helpers.StringToIntArray(helpers.RemoveNewLineTabSpaces(displayTextArea), ",");
+                            newArr = helpers.StrToArr(helpers.deleteNewLineTabSpaces(displayTextArea), ",");
 //                            data.setLength(newArr.length);
 //                            data.setArray(newArr);
                             length = newArr.length;

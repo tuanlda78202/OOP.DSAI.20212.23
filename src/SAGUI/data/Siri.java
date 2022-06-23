@@ -28,7 +28,7 @@ public class Siri {
         return arr;
     }
 
-    public String ArrayToString(int[] arr, String sepChar) {
+    public String ArrToStr(int[] arr, String sepChar) {
         String result = "[\n ";
 
         for (int i = 0; i < arr.length; i++) {

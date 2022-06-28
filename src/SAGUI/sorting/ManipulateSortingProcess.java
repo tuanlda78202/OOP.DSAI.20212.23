@@ -98,13 +98,12 @@ public class ManipulateSortingProcess {
         this.manipulateVisualizer = manipulateVisualizer;
     }
 
-    public ManipulateSortingProcess(int len, int[] array, boolean isSorting, boolean isPause, boolean isStop, int curAlg, int speed, int current, int check) {
+    public ManipulateSortingProcess(int len, int[] array, boolean isSorting, boolean isPause, boolean isStop, int speed, int current, int check) {
         this.length = len;
         this.array = array;
         this.isSorting = isSorting;
         this.isPause = isPause;
         this.isStop = isStop;
-        this.curAlg = curAlg;
         this.speed = speed;
         this.current = current;
         this.check = check;
@@ -132,6 +131,8 @@ public class ManipulateSortingProcess {
         isSorting = manipulateVisualizer.isIsSorting();
         isPause = manipulateVisualizer.isIsPause();
         isStop = manipulateVisualizer.isIsStop();
+        curAlg = manipulateVisualizer.getCurAlg();
+        
         if (manipulateVisualizer.isIsSorting()) {
             try {
                 switch (curAlg) {
@@ -140,10 +141,15 @@ public class ManipulateSortingProcess {
                         bubbleSort.sort(0, length - 1);
                         break;
                     
-                    default:  // Heap sort
+                    case 1:  // Heap sort
                         HeapSort heapSort = new HeapSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         heapSort.sort(0, length - 1);
-
+                        break;
+                       
+                    case 2: // Shell Sort
+                    	ShellSort shellSort = new ShellSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
+                        shellSort.sort(0, length - 1);
+                        break;
                 } 
             } catch (IndexOutOfBoundsException e) {
                 System.out.println(e.getMessage());

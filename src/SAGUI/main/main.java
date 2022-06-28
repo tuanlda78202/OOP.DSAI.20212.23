@@ -11,6 +11,6 @@ public class main {
         for (int i = 0; i < 50; i++) {
             array[i] = rd.nextInt(51);
         }
-        new ManipulateSortingProcess(50, array, false, true, false, 1, 50, -1, -1).init();
+        new ManipulateSortingProcess(50, array, false, true, false, 50, -1, -1).init();
     }
 }

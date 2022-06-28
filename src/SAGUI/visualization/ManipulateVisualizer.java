@@ -737,9 +737,9 @@ public class ManipulateVisualizer {
         algorithmComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 // update processing message when choose algorithm
+            	curAlg = algorithmComboBox.getSelectedIndex();
                 setSortingProcessMsg(sortingProcessListMsg[curAlg]);
-
-                curAlg = algorithmComboBox.getSelectedIndex();
+                sortingProcessLabel.setText(getSortingProcessMsg());
                 algorithmInfoArea.setText(algorithmListInfo[curAlg]);
             }
 

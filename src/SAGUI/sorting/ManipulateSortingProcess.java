@@ -144,9 +144,12 @@ public class ManipulateSortingProcess {
                     case 1:  // Heap sort
                         HeapSort heapSort = new HeapSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         heapSort.sort(0, length - 1);
+                        break;
+                       
                     case 2: // Shell Sort
                     	ShellSort shellSort = new ShellSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         shellSort.sort(0, length - 1);
+                        break;
                 } 
             } catch (IndexOutOfBoundsException e) {
                 System.out.println(e.getMessage());

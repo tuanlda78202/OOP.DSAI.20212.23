@@ -141,10 +141,12 @@ public class ManipulateSortingProcess {
                         bubbleSort.sort(0, length - 1);
                         break;
                     
-                    default:  // Heap sort
+                    case 1:  // Heap sort
                         HeapSort heapSort = new HeapSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         heapSort.sort(0, length - 1);
-
+                    case 2: // Shell Sort
+                    	ShellSort shellSort = new ShellSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
+                        shellSort.sort(0, length - 1);
                 } 
             } catch (IndexOutOfBoundsException e) {
                 System.out.println(e.getMessage());

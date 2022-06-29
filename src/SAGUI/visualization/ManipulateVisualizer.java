@@ -46,6 +46,7 @@ public class ManipulateVisualizer {
     private int length;
     private int[] array;
     private boolean isSorting;
+    private boolean isSorted;
     private boolean isPause;
     private boolean isStop;
 
@@ -162,6 +163,17 @@ public class ManipulateVisualizer {
 //    public void setManipulateSortingProcess(ManipulateSortingProcess manipulateSortingProcess) {
 //        this.manipulateSortingProcess = manipulateSortingProcess;
 //    }
+    
+    public boolean isIsSorted() {
+		for (int i=0; i<array.length - 1; i++) {
+			if (array[i + 1] < array[i]) {
+				isSorted = false;
+				return false;
+			}
+		}
+		return isSorted = true;
+    }
+    
     public int getSpeed() {
         return speed;
     }
@@ -245,7 +257,12 @@ public class ManipulateVisualizer {
     public void setIsStop(boolean isStop) {
         this.isStop = isStop;
     }
-
+    
+    public void showSortedMsg() {
+        JOptionPane.showMessageDialog(jframe, "The data is already sorted! Let's try with new data.",
+                "It's sorted!", JOptionPane.PLAIN_MESSAGE, null);
+    }
+    
     public void initialize() {
         //manipulateSortingProcess = new ManipulateSortingProcess(length, array, isSorting, isPause, isStop, curAlg, speed, current, check);
         ActionListener manipulateSortingActionListener = new ActionListener() {
@@ -254,7 +271,7 @@ public class ManipulateVisualizer {
                 String button = e.getActionCommand();
                 switch (button) {
                     case "Start": {
-                        if (isSorting) {
+                        if (isIsSorted()) {
                             JOptionPane.showMessageDialog(jframe, "The data is already sorted! Let's try with new data.",
                                     "It's sorted!", JOptionPane.PLAIN_MESSAGE, null);
                         } else {
@@ -307,6 +324,7 @@ public class ManipulateVisualizer {
 
                         //data.setStop(true);
                         isStop = true;
+                        isSorting = false;
                         //manipulateSortingProcess.reset();
                         //manipulateSortingProcess.reset();
 

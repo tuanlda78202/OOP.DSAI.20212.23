@@ -132,6 +132,10 @@ public class ManipulateSortingProcess {
         isPause = manipulateVisualizer.isIsPause();
         isStop = manipulateVisualizer.isIsStop();
         curAlg = manipulateVisualizer.getCurAlg();
+        if (manipulateVisualizer.isIsSorted()) {
+        	manipulateVisualizer.showSortedMsg();
+        	return;
+        }
         
         if (manipulateVisualizer.isIsSorting()) {
             try {
@@ -139,20 +143,20 @@ public class ManipulateSortingProcess {
                     case 0:  // Bubble sort
                         BubbleSort bubbleSort = new BubbleSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         bubbleSort.sort(0, length - 1);
+                        manipulateVisualizer.setIsSorting(true);
                         break;
                     
                     case 1:  // Heap sort
                         HeapSort heapSort = new HeapSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
-<<<<<<< HEAD
                         heapSort.buildHeap();
-=======
->>>>>>> 947db6e13ded73b55630a0204a01fb4297634589
                         heapSort.sort(0, length - 1);
+                        manipulateVisualizer.setIsSorting(true);
                         break;
                        
                     case 2: // Shell Sort
                     	ShellSort shellSort = new ShellSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         shellSort.sort(0, length - 1);
+                        manipulateVisualizer.setIsSorting(true);
                         break;
                 } 
             } catch (IndexOutOfBoundsException e) {

@@ -92,7 +92,7 @@ public class HeapSort extends AbsSort{
     public void sort(int start, int end) {
         //getData().setStop(false);
     	int n = this.getLength();
-        //setIsStop(false);
+        setIsStop(false);
 		for (int i = n - 1; i >= 0; i--) {
 			checkPause();
             if (getManipulateVisualizer().isIsStop()) {
@@ -102,8 +102,7 @@ public class HeapSort extends AbsSort{
 			getManipulateVisualizer().setCompared(getManipulateVisualizer().getCompared() + 1);
             getManipulateVisualizer().setArrayAccessed(getManipulateVisualizer().getArrayAccessed() + 2);
 			getManipulateVisualizer().updateProcess(this.getLength(), this.getArray(), this.getCurrent(), this.getCheck());
-            getManipulateVisualizer().delay();
 		    heapify(i, 0, false);
-		}        
+		}
     }
 }

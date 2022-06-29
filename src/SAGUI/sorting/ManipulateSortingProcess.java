@@ -111,30 +111,25 @@ public class ManipulateSortingProcess {
     }
 
     public boolean isSorted() {
-        for (int i = 0; i < length - 1; i++) {
-            if (array[i] > array[i + 1]) {
-                return false;
-            }
-        }
-        return true;
+        return manipulateVisualizer.isIsSorted();
     }
 
     public void init() {
         manipulateVisualizer.initialize();
 
-        sorting();
+        sorting(false);
     }
 
-    public void sorting() {
+    public void sorting(boolean printMsg) {
         length = manipulateVisualizer.getLength();
         array = manipulateVisualizer.getArray();
         isSorting = manipulateVisualizer.isIsSorting();
         isPause = manipulateVisualizer.isIsPause();
         isStop = manipulateVisualizer.isIsStop();
         curAlg = manipulateVisualizer.getCurAlg();
-        if (manipulateVisualizer.isIsSorted()) {
-        	manipulateVisualizer.showSortedMsg();
-        	return;
+        
+        if (!isSorted()) {
+        	printMsg = false;
         }
         
         if (manipulateVisualizer.isIsSorting()) {
@@ -143,20 +138,17 @@ public class ManipulateSortingProcess {
                     case 0:  // Bubble sort
                         BubbleSort bubbleSort = new BubbleSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         bubbleSort.sort(0, length - 1);
-                        manipulateVisualizer.setIsSorting(true);
                         break;
                     
                     case 1:  // Heap sort
                         HeapSort heapSort = new HeapSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         heapSort.buildHeap();
                         heapSort.sort(0, length - 1);
-                        manipulateVisualizer.setIsSorting(true);
                         break;
                        
                     case 2: // Shell Sort
                     	ShellSort shellSort = new ShellSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         shellSort.sort(0, length - 1);
-                        manipulateVisualizer.setIsSorting(true);
                         break;
                 } 
             } catch (IndexOutOfBoundsException e) {
@@ -166,12 +158,17 @@ public class ManipulateSortingProcess {
         if (!manipulateVisualizer.isIsPause()) {
             reset();
         }
-        // update when sort done
-        if (isSorted()) {
-            manipulateVisualizer.updateWhenSortDone();
+     // update when sort done
+        if (isSorted() && !printMsg) {
+        	manipulateVisualizer.updateWhenSortDone();
+        	if (!printMsg) {
+	        	manipulateVisualizer.showSortedMsg();
+	        	printMsg = true;
+        	}
         }
+
         pause();
-        sorting();
+        sorting(printMsg);
     }
 
     public void pause() {

@@ -38,6 +38,7 @@ public class ShellSort extends AbsSort{
 	
 	@Override
 	public void sort(int start, int end) {
+		setIsStop(false);
 		int n = this.getLength();
 		for (int gap = n/2; gap > 0; gap /= 2){
 			checkPause();
@@ -78,6 +79,6 @@ public class ShellSort extends AbsSort{
 	            getManipulateVisualizer().updateProcess(getLength(), getArray(), getCurrent(), getCheck());
 	            getManipulateVisualizer().delay();
 		    }
-		}		
+		}
 	}
 }

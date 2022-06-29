@@ -784,7 +784,7 @@ public class ManipulateVisualizer {
                 JOptionPane.showMessageDialog(jframe, ABOUT_MESSAGE, "About", JOptionPane.PLAIN_MESSAGE, null);
             }
         });
-
+        
         //manipulateSortingProcess.sorting();
     }
 

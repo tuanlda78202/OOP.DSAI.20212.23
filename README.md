@@ -38,7 +38,6 @@ Array is the most basic structure of computer science. Most operations as well a
   - `src/sorting`: Sorting
   - `src/visualization`: Visualization GUI
 - `workflow.md`: GitHub WorkFlow
-- `ANNOUNCEMENTS.md`: All older announcements
 
 ## Branching Model 
 ![Branching Model](https://github.com/tuanlda78202/OOP.DSAI.20212.Team23/blob/main/materials/bm.png)

@@ -27,7 +27,6 @@ public class ShellSort extends AbsSort{
         super(length, array, isSorting, isPause, isStop, mv);
     }
 	
-<<<<<<< HEAD
 	public void checkPause() {
         while (!getManipulateVisualizer().isIsSorting()) {
             getManipulateVisualizer().setSortingProcessMsg(String.format("Bubble sort: Stop"));
@@ -37,13 +36,10 @@ public class ShellSort extends AbsSort{
         }
 	}
 	
-=======
->>>>>>> 947db6e13ded73b55630a0204a01fb4297634589
 	@Override
 	public void sort(int start, int end) {
 		int n = this.getLength();
 		for (int gap = n/2; gap > 0; gap /= 2){
-<<<<<<< HEAD
 			checkPause();
 			if (getManipulateVisualizer().isIsStop()) {
                 break;
@@ -64,21 +60,9 @@ public class ShellSort extends AbsSort{
 		        	this.getArray()[j] = this.getArray()[j - gap];
 		        	setCheck(j - gap);
 		        	getManipulateVisualizer().setSortingProcessMsg(
-                            String.format("Shell sort: Gap size: %d."
+                            String.format("Shell sort: Current Gap size = %d."
                             		+ " Comparing elements at position %d with the right side of the gap at position %d ", 
-                            		gap, j - gap, i));
-=======
-			for (int i = gap; i < n; i += 1){
-		        int temp = this.getArray()[i]; 
-		        int j;
-		        for (j = i; j >= gap && this.getArray()[j - gap] > temp; j -= gap) {
-		        	this.getArray()[j] = this.getArray()[j - gap];
-		        	setCurrent(j);
-		        	setCheck(j - gap);
-		        	getManipulateVisualizer().setSortingProcessMsg(
-                            String.format("Shell sort: Set elements at position %d by elements at position %d ", j,
-                                    j - gap));
->>>>>>> 947db6e13ded73b55630a0204a01fb4297634589
+                            		gap, j - gap,i));
 		        	
 		        	getManipulateVisualizer().setCompared(getManipulateVisualizer().getCompared() + 1);
 		            getManipulateVisualizer().setArrayAccessed(getManipulateVisualizer().getArrayAccessed() + 2);

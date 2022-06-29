@@ -15,7 +15,7 @@ public class AbsSort implements swap {
     private boolean isStop;
 
     public ManipulateVisualizer getManipulateVisualizer() {
-        return manipulateVisualizer;
+        return this.manipulateVisualizer;
     }
 
     public void setManipulateVisualizer(ManipulateVisualizer manipulateVisualizer) {
@@ -32,7 +32,7 @@ public class AbsSort implements swap {
     }
 
     public int[] getArray() {
-        return array;
+        return this.array;
     }
 
     public void setArray(int[] array) {
@@ -40,7 +40,7 @@ public class AbsSort implements swap {
     }
 
     public int getLength() {
-        return length;
+        return this.length;
     }
 
     public void setLength(int length) {
@@ -52,7 +52,7 @@ public class AbsSort implements swap {
     }
 
     public boolean isIsSorting() {
-        return isSorting;
+        return this.isSorting;
     }
 
     public void setIsSorting(boolean isSorting) {
@@ -77,9 +77,9 @@ public class AbsSort implements swap {
 
     @Override
     public void swap(int i1, int i2) {
-        int tmp = array[i1];
-        array[i1] = array[i2];
-        array[i2] = tmp;
+        int tmp = this.array[i1];
+        this.array[i1] = this.array[i2];
+        this.array[i2] = tmp;
 
         getManipulateVisualizer().updateArrayAccessed(5);
     }

@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import static java.lang.Integer.max;
 import javax.swing.JPanel;
+import java.awt.Rectangle;
 
 public class GraphVisualizer extends JPanel {
 
@@ -88,14 +89,16 @@ public class GraphVisualizer extends JPanel {
             }
             int curRectPosX = i * rectangle_width;
             // fill rectangle element in graph
+            //System.out.print(HEIGHT + " ");
             g.fillRect(curRectPosX, 0, rectangle_width, HEIGHT);
-
+            
             g.setColor(Color.black);
-
+            
             // draw outline of rectangle element in graph
             g.drawRect(curRectPosX, 0, rectangle_width, HEIGHT);
 
         }
+        //System.out.println("");
         //repaint();
     }
 }

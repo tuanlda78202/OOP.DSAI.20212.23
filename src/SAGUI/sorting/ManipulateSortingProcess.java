@@ -16,7 +16,7 @@ public class ManipulateSortingProcess {
     private boolean isStop;
 
     private int speed;
-    private int curAlg; // 0 for bubble, 1 for quick, 2 for insertion
+    private int curAlg;
 
     public int getCurrent() {
         return current;
@@ -98,13 +98,12 @@ public class ManipulateSortingProcess {
         this.manipulateVisualizer = manipulateVisualizer;
     }
 
-    public ManipulateSortingProcess(int len, int[] array, boolean isSorting, boolean isPause, boolean isStop, int curAlg, int speed, int current, int check) {
+    public ManipulateSortingProcess(int len, int[] array, boolean isSorting, boolean isPause, boolean isStop, int speed, int current, int check) {
         this.length = len;
         this.array = array;
         this.isSorting = isSorting;
         this.isPause = isPause;
         this.isStop = isStop;
-        this.curAlg = curAlg;
         this.speed = speed;
         this.current = current;
         this.check = check;
@@ -132,24 +131,27 @@ public class ManipulateSortingProcess {
         isSorting = manipulateVisualizer.isIsSorting();
         isPause = manipulateVisualizer.isIsPause();
         isStop = manipulateVisualizer.isIsStop();
+        curAlg = manipulateVisualizer.getCurAlg();
+        
         if (manipulateVisualizer.isIsSorting()) {
             try {
                 switch (curAlg) {
-                    case 0: // bubble sort
+                    case 0:  // Bubble sort
                         BubbleSort bubbleSort = new BubbleSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
                         bubbleSort.sort(0, length - 1);
                         break;
-                    case 1:  //quick sort
-                        //isStop = false;
-                        setIsStop(false);
-                        QuickSort quickSort = new QuickSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
-                        quickSort.sort(0, length - 1);
+                    
+                    case 1:  // Heap sort
+                        HeapSort heapSort = new HeapSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
+                        heapSort.buildHeap();
+                        heapSort.sort(0, length - 1);
                         break;
-                    default: // insertion sort
-                        InsertionSort insertionSort = new InsertionSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
-                        insertionSort.sort(0, length - 1);
+                       
+                    case 2: // Shell Sort
+                    	ShellSort shellSort = new ShellSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
+                        shellSort.sort(0, length - 1);
                         break;
-                }
+                } 
             } catch (IndexOutOfBoundsException e) {
                 System.out.println(e.getMessage());
             }
@@ -177,7 +179,7 @@ public class ManipulateSortingProcess {
     public void reset() {
         isSorting = false;
         manipulateVisualizer.setIsSorting(false);
-        //SortingAlgorithms algorithm = new SortingAlgorithms(length, array, isSorting, isPause, isStop);
+        // SortingAlgorithms algorithm = new SortingAlgorithms(length, array, isSorting, isPause, isStop);
         setCurrent(-1);
         setCheck(-1);
         Update();

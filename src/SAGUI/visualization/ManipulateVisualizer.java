@@ -2,8 +2,8 @@
 
 package SAGUI.visualization;
 
-import SAGUI.sata.support;
-import SAGUI.sata.valid;
+import SAGUI.data.Siri;
+import SAGUI.data.ValidData;
 
 import java.awt.Color;
 import java.awt.Insets;
@@ -34,8 +34,8 @@ import javax.swing.event.DocumentListener;
 
 public class ManipulateVisualizer {
 
-    ValidateData validator = new ValidateData();
-    Helpers helpers = new Helpers();
+    ValidData validator = new ValidData();
+    Siri helpers = new Siri();
     //private ManipulateSortingProcess manipulateSortingProcess;
 
     GraphVisualizer canvas;
@@ -59,9 +59,8 @@ public class ManipulateVisualizer {
 
     private final String ABOUT_MESSAGE = "Sorting Visualizer\n\n"
             + "This program is built to help you visualize some of sorting algorithms namely: Bubble sort, Heap sort, Shell sort.\n\n"
-            + "We will keep developing with another algorithms in the future.\n\n"
             + "Thank you for using our program \u2665\n\n"
-            + "(c) Copyright by OOLT.ICT.20212.Team23";
+            + "(c) Copyright by OOP.DSAI.20212.Team23";
     private final String HELP_INSTRUCTION_MESSAGE = "Here is the instruction of program:\n"
             + "1. Step 1: Generate Data.\n"
             + "In Data pane, you can generate the data by two ways:\n"
@@ -72,7 +71,7 @@ public class ManipulateVisualizer {
             + "In Control pane, you can choose sorting algorithm in the combo box 'Choose algorithm'.\n"
             + "3. Step 3: Manipulate sorting process\n"
             + "You can manipulate the sorting process with start, pause, stop, resume actions.\n"
-            + "You also can change the speed of process by slide a slider of Delay.\n\n"
+            + "You also can change the speed of process by slide a slider of Delay.\n\n";
 
     private static final int MAX_ARRAY_LENGTH = 300;
     private String displayTextArea = "[\n \n]";
@@ -85,11 +84,11 @@ public class ManipulateVisualizer {
     private String[] genDataOptions = {"Random", "Manual input"};
     private String[] helpGenDataMsg = {
         "You should input a positive integer for array length which have min = 2 and max = 300!",
-        "You should input an array with 2-300 elements contains only positive integers that seperated by comma and wrapped by square brackets"};
+        "You should input an array with 2-300 elements contains only positive integers that separated by comma and wrapped by square brackets"};
     private String[] algorithmOptions = {"Bubble sort", "Heap sort", "Shell sort"};
     private String[] algorithmListInfo = {"Best Case: O(n)\nWorst Case: O(n^2)\nAverage: O(n^2)",
-        "Best Case: O(nlogn)\nWorst Case: O(n^2)\nAverage: O(nlogn)",
-        "Best Case: O(n)\nWorst Case: O(n^2)\nAverage: O(n^2)"};
+        "Best Case: O(nlogn)\nWorst Case: O(nlogn)\nAverage: O(nlogn)",
+        "Best Case: O(nlogn)\nWorst Case: O(n^2)\nAverage: O(nlogn)"};
 
     // FRAME
     private JFrame jframe;
@@ -572,8 +571,8 @@ public class ManipulateVisualizer {
                 btnStartSort.setEnabled(false);
 
                 String curInput = arrayLengthInput.getText();
-                if (!validator.isNullOrEmpty(curInput)) {
-                    if (validator.isNumber(curInput)) {
+                if (!validator.checkNullOrEmpty(curInput)) {
+                    if (validator.checkNumber(curInput)) {
                         int arrLength = Integer.parseInt(curInput);
                         if (arrLength > 1) {
                             if (arrLength <= 300) {
@@ -607,7 +606,7 @@ public class ManipulateVisualizer {
 
             private void showErrorMsg(String errorMsg) {
                 arrayLengthErrorLabel.setText(errorMsg);
-                btnGenerateArray.setEnabled(validator.isNullOrEmpty(errorMsg) ? true : false);
+                btnGenerateArray.setEnabled(validator.checkNullOrEmpty(errorMsg) ? true : false);
             }
         });
 
@@ -641,7 +640,7 @@ public class ManipulateVisualizer {
 
                 String curInput = inputArrayArea.getText();
                 try {
-                    int[] arr = helpers.StringToIntArray(helpers.RemoveNewLineTabSpaces(curInput), ",");
+                    int[] arr = helpers.StrToArr(helpers.deleteNewLineTabSpaces(curInput), ",");
                     if (arr.length > 1 && arr.length <= 300) {
                         showErrorMsg("");
                         displayTextArea = curInput;
@@ -662,7 +661,7 @@ public class ManipulateVisualizer {
 
             private void showErrorMsg(String errorMsg) {
                 arrayLengthErrorLabel.setText(errorMsg);
-                btnGenerateArray.setEnabled(validator.isNullOrEmpty(errorMsg) ? true : false);
+                btnGenerateArray.setEnabled(validator.checkNullOrEmpty(errorMsg) ? true : false);
             }
         });
 
@@ -712,7 +711,7 @@ public class ManipulateVisualizer {
                     case 1: // manual input
                         int[] newArr;
                         try {
-                            newArr = helpers.StringToIntArray(helpers.RemoveNewLineTabSpaces(displayTextArea), ",");
+                            newArr = helpers.StrToArr(helpers.deleteNewLineTabSpaces(displayTextArea), ",");
 //                            data.setLength(newArr.length);
 //                            data.setArray(newArr);
                             length = newArr.length;
@@ -738,9 +737,9 @@ public class ManipulateVisualizer {
         algorithmComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 // update processing message when choose algorithm
+            	curAlg = algorithmComboBox.getSelectedIndex();
                 setSortingProcessMsg(sortingProcessListMsg[curAlg]);
-
-                curAlg = algorithmComboBox.getSelectedIndex();
+                sortingProcessLabel.setText(getSortingProcessMsg());
                 algorithmInfoArea.setText(algorithmListInfo[curAlg]);
             }
 

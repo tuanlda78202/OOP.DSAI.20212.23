@@ -143,7 +143,10 @@ public class ManipulateSortingProcess {
                     
                     case 1:  // Heap sort
                         HeapSort heapSort = new HeapSort(length, array, isSorting, isPause, isStop, manipulateVisualizer);
+<<<<<<< HEAD
                         heapSort.buildHeap();
+=======
+>>>>>>> 947db6e13ded73b55630a0204a01fb4297634589
                         heapSort.sort(0, length - 1);
                         break;
                        

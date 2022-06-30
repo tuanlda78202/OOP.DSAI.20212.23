@@ -1,5 +1,3 @@
-// author @tuanlda78202
-
 package SAGUI.sorting;
 
 import SAGUI.visualization.ManipulateVisualizer;

@@ -1,5 +1,3 @@
-// author @tuanlda78202
-
 package SAGUI.visualization;
 
 import SAGUI.data.Siri;
@@ -36,7 +34,6 @@ public class ManipulateVisualizer {
 
     ValidData validator = new ValidData();
     Siri helpers = new Siri();
-    //private ManipulateSortingProcess manipulateSortingProcess;
 
     GraphVisualizer canvas;
 
@@ -61,7 +58,7 @@ public class ManipulateVisualizer {
     private final String ABOUT_MESSAGE = "Sorting Visualizer\n\n"
             + "This program is built to help you visualize some of sorting algorithms namely: Bubble sort, Heap sort, Shell sort.\n\n"
             + "Thank you for using our program \u2665\n\n"
-            + "(c) Copyright by OOP.DSAI.20212.Team23";
+            + "(c) Copyright by OOP.DSAI.20212.23";
     private final String HELP_INSTRUCTION_MESSAGE = "Here is the instruction of program:\n"
             + "1. Step 1: Generate Data.\n"
             + "In Data pane, you can generate the data by two ways:\n"
@@ -103,10 +100,10 @@ public class ManipulateVisualizer {
     JLabel speedLabel = new JLabel(speed + " ms");
     public JLabel comparedLabel = new JLabel("Comparisons: " + compared);
     public JLabel arrayAccessedLabel = new JLabel("Array Accessed: " + arrayAccessed);
-    JLabel genDataOptionLabel = new JLabel("Choose how to create data");
+    JLabel genDataOptionLabel = new JLabel("Create data");
     JLabel arrayLengthLabel = new JLabel("Array length:");
     JLabel arrayLengthErrorLabel = new JLabel("");
-    JLabel algorithmOptionLabel = new JLabel("Choose algorithms");
+    JLabel algorithmOptionLabel = new JLabel("Algorithm");
     JLabel algorithmInfoLabel = new JLabel("Algorithm info");
     public JLabel sortingProcessLabel = new JLabel(sortingProcessMsg);
 
@@ -155,14 +152,6 @@ public class ManipulateVisualizer {
         this.check = check;
         rectangle_width = GRAPH_SIZE / length;
     }
-
-//    public ManipulateSortingProcess getManipulateSortingProcess() {
-//        return manipulateSortingProcess;
-//    }
-//
-//    public void setManipulateSortingProcess(ManipulateSortingProcess manipulateSortingProcess) {
-//        this.manipulateSortingProcess = manipulateSortingProcess;
-//    }
     
     public boolean isIsSorted() {
 		for (int i=0; i<array.length - 1; i++) {
@@ -264,7 +253,6 @@ public class ManipulateVisualizer {
     }
     
     public void initialize() {
-        //manipulateSortingProcess = new ManipulateSortingProcess(length, array, isSorting, isPause, isStop, curAlg, speed, current, check);
         ActionListener manipulateSortingActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -287,7 +275,6 @@ public class ManipulateVisualizer {
                             //data.setSorting(true);
                             isSorting = true;
                             isStop = false;
-                            //manipulateSortingProcess.setIsSorting(true);
 
                             compared = 0;
                             arrayAccessed = 0;
@@ -299,13 +286,9 @@ public class ManipulateVisualizer {
                         break;
                     }
                     case "Pause": {
-//                        data.setSorting(false);
-//                        data.setPause(true);
                         isPause = true;
                         isSorting = false;
                         isStop = false;
-                        //manipulateSortingProcess.setIsSorting(false);
-                        //manipulateSortingProcess.setIsPause(true);
 
                         btnPauseSort.setVisible(false);
                         btnStopSort.setVisible(false);
@@ -325,8 +308,6 @@ public class ManipulateVisualizer {
                         //data.setStop(true);
                         isStop = true;
                         isSorting = false;
-                        //manipulateSortingProcess.reset();
-                        //manipulateSortingProcess.reset();
 
                         // update processing message when stop sort
                         setSortingProcessMsg(sortingProcessListMsg[curAlg]);
@@ -342,8 +323,6 @@ public class ManipulateVisualizer {
                         isSorting = true;
                         isPause = false;
                         isStop = false;
-                        //manipulateSortingProcess.setIsSorting(true);
-                        //manipulateSortingProcess.setIsPause(false);
 
                         btnResumeSort.setVisible(false);
                         btnPauseSort.setVisible(true);
@@ -596,17 +575,11 @@ public class ManipulateVisualizer {
                             if (arrLength <= 300) {
                                 showErrorMsg("");
                                 length = Integer.parseInt(curInput);
-                                //manipulateSortingProcess.reset();
-                                //manipulateSortingProcess.Update();
-
-                                //manipulateSortingProcess.reset();
                                 
                                 //--------reset-------------
                                 isSorting = false;
                                 current = -1;
                                 check = -1;
-                                //updateProcess(length, array, current, check);
-                                //--------------------------
 
                             } else {
                                 showErrorMsg("Must less than or equal 300");
@@ -700,8 +673,6 @@ public class ManipulateVisualizer {
                 curInputDataOption = genDataOptionComboBox.getSelectedIndex();
                 switch (curInputDataOption) {
                     case 0: // random
-//                        data.setLength(Integer.parseInt(arrayLengthInput.getText()));
-                        //data.generateRandomArray();
                         length = Integer.parseInt(arrayLengthInput.getText());
                         array = new int[length];
                         for (int i = 0; i < length; i++) {
@@ -717,9 +688,7 @@ public class ManipulateVisualizer {
                         }
                         isSorting = false;
 
-                        //manipulateSortingProcess.setLength(length);
                         canvas.setLength(length);
-                        //manipulateSortingProcess.setArray(array);
                         canvas.setArray(array);
 
                         canvas.setRectangle_width(GRAPH_SIZE / length);
@@ -730,15 +699,11 @@ public class ManipulateVisualizer {
                         int[] newArr;
                         try {
                             newArr = helpers.StrToArr(helpers.deleteNewLineTabSpaces(displayTextArea), ",");
-//                            data.setLength(newArr.length);
-//                            data.setArray(newArr);
                             length = newArr.length;
-                            //manipulateSortingProcess.setLength(length);
                             canvas.setLength(length);
 
                             array = newArr;
 
-                            //manipulateSortingProcess.setArray(array);
                             canvas.setArray(array);
 
                             canvas.setRectangle_width(GRAPH_SIZE / length);
@@ -785,7 +750,6 @@ public class ManipulateVisualizer {
             }
         });
         
-        //manipulateSortingProcess.sorting();
     }
 
     public void updateWhenSortDone() {
@@ -813,7 +777,6 @@ public class ManipulateVisualizer {
         arrayAccessedLabel.setText("Array Accessed : " + getArrayAccessed());
         sortingProcessLabel.setText(getSortingProcessMsg());
 
-        //canvas = new GraphVisualizer(rectangle_width, length, array, current, check);
         canvas.setLength(length);
         canvas.setArray(array);
         canvas.setRectangle_width(GRAPH_SIZE / length);

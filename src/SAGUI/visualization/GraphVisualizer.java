@@ -1,5 +1,3 @@
-// author @tuanlda78202
-
 package SAGUI.visualization;
 
 import java.awt.Color;
@@ -57,7 +55,7 @@ public class GraphVisualizer extends JPanel {
     }
 
     public GraphVisualizer(int recWid, int length, int[] ar, int cur, int check) {
-        setBackground(Color.black);
+        setBackground(Color.DARK_GRAY);
         this.rectangle_width = recWid;
         this.length = length;
         this.array = ar;
@@ -69,10 +67,6 @@ public class GraphVisualizer extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        //InitializeData data = new InitializeData();
-        //ManipulateVisualizer manipulateVisualizer = new ManipulateVisualizer();
-        //SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
-        
         int maxHeight = -1;
         for (int i = 0; i < length; i++) {
             maxHeight = max(maxHeight, array[i]);
@@ -81,15 +75,17 @@ public class GraphVisualizer extends JPanel {
         for (int i = 0; i < length; i++) {
             int HEIGHT = array[i] * (600/maxHeight); // set height of element in graph.
             g.setColor(Color.white);
+
             if (current > -1 && i == current) {
                 g.setColor(Color.green); // color of current traversing element
             }
+
             if (check > -1 && i == check) {
                 g.setColor(Color.red); // color of current checking element
             }
+            
             int curRectPosX = i * rectangle_width;
-            // fill rectangle element in graph
-            //System.out.print(HEIGHT + " ");
+
             g.fillRect(curRectPosX, 0, rectangle_width, HEIGHT);
             
             g.setColor(Color.black);
@@ -98,7 +94,5 @@ public class GraphVisualizer extends JPanel {
             g.drawRect(curRectPosX, 0, rectangle_width, HEIGHT);
 
         }
-        //System.out.println("");
-        //repaint();
     }
 }

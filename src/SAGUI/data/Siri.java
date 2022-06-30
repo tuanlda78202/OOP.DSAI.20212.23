@@ -1,5 +1,3 @@
-// author @tuanlda78202
-
 package SAGUI.data;
 
 public class Siri { 

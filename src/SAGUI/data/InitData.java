@@ -1,5 +1,3 @@
-// author @tuanlda78202
-
 // Package Data
 package SAGUI.data;
 import SAGUI.visualization.ManipulateVisualizer;

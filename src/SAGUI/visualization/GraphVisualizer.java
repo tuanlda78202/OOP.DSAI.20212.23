@@ -1,3 +1,5 @@
+// author @tuanlda78202
+
 package SAGUI.visualization;
 
 import java.awt.Color;
@@ -73,25 +75,23 @@ public class GraphVisualizer extends JPanel {
         }
         
         for (int i = 0; i < length; i++) {
-            int HEIGHT = array[i] * (600/maxHeight); // set height of element in graph.
+            int HEIGHT = array[i] * (getHeight()/maxHeight); // set height of element in graph.
             g.setColor(Color.white);
-
             if (current > -1 && i == current) {
                 g.setColor(Color.green); // color of current traversing element
             }
-
             if (check > -1 && i == check) {
                 g.setColor(Color.red); // color of current checking element
             }
-            
             int curRectPosX = i * rectangle_width;
-
-            g.fillRect(curRectPosX, 0, rectangle_width, HEIGHT);
+            // fill rectangle element in graph
+            
+            g.fillRect(curRectPosX, getHeight() - HEIGHT, rectangle_width, HEIGHT);
             
             g.setColor(Color.black);
             
             // draw outline of rectangle element in graph
-            g.drawRect(curRectPosX, 0, rectangle_width, HEIGHT);
+            g.drawRect(curRectPosX, getHeight() - HEIGHT, rectangle_width, HEIGHT);
 
         }
     }

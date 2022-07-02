@@ -90,7 +90,6 @@ public class HeapSort extends AbsSort{
     }
     @Override
     public void sort(int start, int end) {
-        //getData().setStop(false);
     	int n = this.getLength();
         setIsStop(false);
 		for (int i = n - 1; i >= 0; i--) {

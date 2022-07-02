@@ -181,7 +181,6 @@ public class ManipulateSortingProcess {
     public void reset() {
         isSorting = false;
         manipulateVisualizer.setIsSorting(false);
-        // SortingAlgorithms algorithm = new SortingAlgorithms(length, array, isSorting, isPause, isStop);
         setCurrent(-1);
         setCheck(-1);
         Update();

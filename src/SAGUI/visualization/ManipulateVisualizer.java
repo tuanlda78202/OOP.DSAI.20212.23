@@ -32,10 +32,10 @@ import javax.swing.event.DocumentListener;
 
 public class ManipulateVisualizer {
 
-    ValidData validator = new ValidData();
-    Siri helpers = new Siri();
+	private ValidData validator = new ValidData();
+	private Siri helpers = new Siri();
 
-    GraphVisualizer canvas;
+	private GraphVisualizer canvas;
 
     private Random r = new Random();
     private int current;
@@ -92,55 +92,55 @@ public class ManipulateVisualizer {
     private JFrame jframe;
 
     // PANEL
-    JPanel genDataPane = new JPanel();
-    JPanel controlsPane = new JPanel();
+    private JPanel genDataPane = new JPanel();
+    private JPanel controlsPane = new JPanel();
 
     // LABEL
-    JLabel delayLabel = new JLabel("Delay :");
-    JLabel speedLabel = new JLabel(speed + " ms");
+    private JLabel delayLabel = new JLabel("Delay :");
+    private JLabel speedLabel = new JLabel(speed + " ms");
     public JLabel comparedLabel = new JLabel("Comparisons: " + compared);
     public JLabel arrayAccessedLabel = new JLabel("Array Accessed: " + arrayAccessed);
-    JLabel genDataOptionLabel = new JLabel("Create data");
-    JLabel arrayLengthLabel = new JLabel("Array length:");
-    JLabel arrayLengthErrorLabel = new JLabel("");
-    JLabel algorithmOptionLabel = new JLabel("Algorithm");
-    JLabel algorithmInfoLabel = new JLabel("Algorithm info");
+    private JLabel genDataOptionLabel = new JLabel("Create data");
+    private JLabel arrayLengthLabel = new JLabel("Array length:");
+    private JLabel arrayLengthErrorLabel = new JLabel("");
+    private JLabel algorithmOptionLabel = new JLabel("Algorithm");
+    private JLabel algorithmInfoLabel = new JLabel("Algorithm info");
     public JLabel sortingProcessLabel = new JLabel(sortingProcessMsg);
 
     // DROP DOWN BOX
-    public JComboBox genDataOptionComboBox = new JComboBox(genDataOptions);
-    public JComboBox algorithmComboBox = new JComboBox(algorithmOptions);
+    private JComboBox genDataOptionComboBox = new JComboBox(genDataOptions);
+    private JComboBox algorithmComboBox = new JComboBox(algorithmOptions);
 
     // TEXT AREA
-    public JTextArea inputArrayArea = new JTextArea(displayTextArea);
-    JTextArea algorithmInfoArea = new JTextArea(algorithmListInfo[curAlg]);
+    private JTextArea inputArrayArea = new JTextArea(displayTextArea);
+    private JTextArea algorithmInfoArea = new JTextArea(algorithmListInfo[curAlg]);
 
     // SCROLL PANE
-    public JScrollPane inputArrayScrollPane = new JScrollPane(inputArrayArea);
+    private JScrollPane inputArrayScrollPane = new JScrollPane(inputArrayArea);
 
     // BUTTON
-    public JButton btnGenerateArray = new JButton("Generate");
-    JButton btnHelpGenerateArray = new JButton("?");
+    private JButton btnGenerateArray = new JButton("Generate");
+    private JButton btnHelpGenerateArray = new JButton("?");
 
-    public JButton btnStartSort = new JButton("Start");
-    public JButton btnPauseSort = new JButton("Pause");
-    public JButton btnStopSort = new JButton("Stop");
-    JButton btnResumeSort = new JButton("Resume");
+    private JButton btnStartSort = new JButton("Start");
+    private JButton btnPauseSort = new JButton("Pause");
+    private JButton btnStopSort = new JButton("Stop");
+    private JButton btnResumeSort = new JButton("Resume");
 
-    JButton btnHelpComparison = new JButton("?");
-    JButton btnHelpAccess = new JButton("?");
+    private JButton btnHelpComparison = new JButton("?");
+    private JButton btnHelpAccess = new JButton("?");
 
-    JButton btnHelpInstructions = new JButton("Help");
-    JButton btnAbout = new JButton("About");
+    private JButton btnHelpInstructions = new JButton("Help");
+    private JButton btnAbout = new JButton("About");
 
     // TEXT FIELD
-    public JTextField arrayLengthInput = new JTextField("50");
+    private JTextField arrayLengthInput = new JTextField("50");
 
     // SLIDER
-    JSlider speedSlider = new JSlider(JSlider.HORIZONTAL, 0, 100, speed);
+    private JSlider speedSlider = new JSlider(JSlider.HORIZONTAL, 0, 100, speed);
 
     // BORDER STYLE
-    Border loweredEtched = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
+    private Border loweredEtched = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
 
     public ManipulateVisualizer(int length, int[] array, boolean isSorting, boolean isPause, boolean isStop, int cur, int check) {
         this.length = length;
@@ -318,8 +318,6 @@ public class ManipulateVisualizer {
                         break;
                     }
                     case "Resume": {
-//                        data.setSorting(true);
-//                        data.setPause(false);
                         isSorting = true;
                         isPause = false;
                         isStop = false;
@@ -635,7 +633,6 @@ public class ManipulateVisualizer {
                     if (arr.length > 1 && arr.length <= 300) {
                         showErrorMsg("");
                         displayTextArea = curInput;
-//						changeText(arr, ",");
                     } else {
                         showErrorMsg("Invalid array!");
                     }

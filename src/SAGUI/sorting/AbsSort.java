@@ -2,7 +2,7 @@ package SAGUI.sorting;
 
 import SAGUI.visualization.ManipulateVisualizer;
 
-public class AbsSort implements swap {
+public abstract class AbsSort implements swap {
 
     private ManipulateVisualizer manipulateVisualizer;
 
@@ -13,10 +13,10 @@ public class AbsSort implements swap {
     private boolean isStop;
 
     public ManipulateVisualizer getManipulateVisualizer() {
-        return this.manipulateVisualizer;
+        return manipulateVisualizer;
     }
 
-    public void setManipulateVisualizer(ManipulateVisualizer manipulateVisualizer) {
+	public void setManipulateVisualizer(ManipulateVisualizer manipulateVisualizer) {
         this.manipulateVisualizer = manipulateVisualizer;
     }
 
@@ -30,7 +30,7 @@ public class AbsSort implements swap {
     }
 
     public int[] getArray() {
-        return this.array;
+        return array;
     }
 
     public void setArray(int[] array) {
@@ -38,7 +38,7 @@ public class AbsSort implements swap {
     }
 
     public int getLength() {
-        return this.length;
+        return length;
     }
 
     public void setLength(int length) {
@@ -50,7 +50,7 @@ public class AbsSort implements swap {
     }
 
     public boolean isIsSorting() {
-        return this.isSorting;
+        return isSorting;
     }
 
     public void setIsSorting(boolean isSorting) {

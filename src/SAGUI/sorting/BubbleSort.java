@@ -28,7 +28,6 @@ public class BubbleSort extends AbsSort {
 
     @Override
     public void sort(int start, int end) {
-        //getData().setStop(false);
         setIsStop(false);
         int c = 1;
         boolean noswaps = false;

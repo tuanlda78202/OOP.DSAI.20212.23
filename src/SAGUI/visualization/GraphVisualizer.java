@@ -78,10 +78,10 @@ public class GraphVisualizer extends JPanel {
             int HEIGHT = array[i] * (getHeight()/maxHeight); // set height of element in graph.
             g.setColor(Color.white);
             if (current > -1 && i == current) {
-                g.setColor(Color.green); // color of current traversing element
+                g.setColor(Color.red); // color of current traversing element
             }
             if (check > -1 && i == check) {
-                g.setColor(Color.red); // color of current checking element
+                g.setColor(Color.green); // color of current checking element
             }
             int curRectPosX = i * rectangle_width;
             // fill rectangle element in graph

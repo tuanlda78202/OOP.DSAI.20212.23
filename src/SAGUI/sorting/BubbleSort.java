@@ -44,7 +44,7 @@ public class BubbleSort extends AbsSort {
             setCurrent(getLength() - c);
             noswaps = true;
             getManipulateVisualizer().setSortingProcessMsg(
-                    String.format("Bubble sort: Start the %d loop, run from 0 to %d. Position %d have been sorted", c, getLength() - c, c));
+                    String.format("Bubble sort: Start the loop %d, run from 0 to %d. Position %d has been sorted", c, getLength() - c, c));
             for (int i = 0; i < getLength() - c; i++) {
                 while (!getManipulateVisualizer().isIsSorting()) {
                     getManipulateVisualizer().setSortingProcessMsg(String.format("Bubble sort: Stop"));

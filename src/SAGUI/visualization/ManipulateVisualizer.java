@@ -55,21 +55,20 @@ public class ManipulateVisualizer {
     private String[] sortingProcessListMsg = {"Bubble sort", "Heap sort", "Shell sort"};
     private String sortingProcessMsg = sortingProcessListMsg[curAlg];
 
-    private final String ABOUT_MESSAGE = "Sorting Visualizer\n\n"
-            + "This program is built to help you visualize some of sorting algorithms namely: Bubble sort, Heap sort, Shell sort.\n\n"
-            + "Thank you for using our program \u2665\n\n"
-            + "(c) Copyright by OOP.DSAI.20212.23";
-    private final String HELP_INSTRUCTION_MESSAGE = "Here is the instruction of program:\n"
+    private final String ABOUT_MESSAGE = "Sorting Algorithms GUI \n\n"
+            + "This software is designed to assist you in visualizing several sorting algorithms, including Bubble, Heap, and Shell sort. \n\n"
+            + "Made by OOP.DSAI.20212.23";
+    private final String HELP_INSTRUCTION_MESSAGE = "The program's instructions are as follows:\n"
             + "1. Step 1: Generate Data.\n"
-            + "In Data pane, you can generate the data by two ways:\n"
-            + "- Random: You should input an positive integer for array length.\n"
-            + "- Manual: You should input an positive integer array.\n"
-            + "After input, choose Generate button\n"
-            + "2. Step 2: Choose sorting algorithm\n"
-            + "In Control pane, you can choose sorting algorithm in the combo box 'Choose algorithm'.\n"
+            + "You have two options for creating data in the Data pane:\n"
+            + "- Random: When prompted for the array length, enter a positive number.\n"
+            + "- Manual: You must enter an array of positive integers.\n"
+            + "Choose the Generate button after entering. \n"
+            + "2. Step 2: Select the sorting method \n"
+            + "In the Control pane's combo box labeled, you may select the sorting algorithm. \n"
             + "3. Step 3: Manipulate sorting process\n"
-            + "You can manipulate the sorting process with start, pause, stop, resume actions.\n"
-            + "You also can change the speed of process by slide a slider of Delay.\n\n";
+            + "Start, pause, stop, and resume actions allow you to control the sorting process.\n"
+            + "You may also modify the process's pace by using a slider of Delay\n\n";
 
     private static final int MAX_ARRAY_LENGTH = 300;
     private String displayTextArea = "[\n \n]";
@@ -79,10 +78,10 @@ public class ManipulateVisualizer {
     private int rectangle_width;
 
     // ARRAYS
-    private String[] genDataOptions = {"Random", "Manual input"};
+    private String[] genDataOptions = {"Random", "Manual"};
     private String[] helpGenDataMsg = {
-        "You should input a positive integer for array length which have min = 2 and max = 300!",
-        "You should input an array with 2-300 elements contains only positive integers that separated by comma and wrapped by square brackets"};
+        "The array length input field requires a positive integer with a minimum of 2 and a maximum of 300.",
+        "You must enter an array with between 200 and 300 entries that only contains positive numbers separated by commas and enclosed in square brackets."};
     private String[] algorithmOptions = {"Bubble sort", "Heap sort", "Shell sort"};
     private String[] algorithmListInfo = {"Best Case: O(n)\nWorst Case: O(n^2)\nAverage: O(n^2)",
         "Best Case: O(nlogn)\nWorst Case: O(nlogn)\nAverage: O(nlogn)",
@@ -96,11 +95,11 @@ public class ManipulateVisualizer {
     private JPanel controlsPane = new JPanel();
 
     // LABEL
-    private JLabel delayLabel = new JLabel("Delay :");
+    private JLabel delayLabel = new JLabel("Speed :");
     private JLabel speedLabel = new JLabel(speed + " ms");
     public JLabel comparedLabel = new JLabel("Comparisons: " + compared);
     public JLabel arrayAccessedLabel = new JLabel("Array Accessed: " + arrayAccessed);
-    private JLabel genDataOptionLabel = new JLabel("Create data");
+    private JLabel genDataOptionLabel = new JLabel("Generate");
     private JLabel arrayLengthLabel = new JLabel("Array length:");
     private JLabel arrayLengthErrorLabel = new JLabel("");
     private JLabel algorithmOptionLabel = new JLabel("Algorithm");

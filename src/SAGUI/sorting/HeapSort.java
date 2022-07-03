@@ -64,7 +64,7 @@ public class HeapSort extends AbsSort{
 			}
 			else {
 				getManipulateVisualizer().setSortingProcessMsg(
-	                    String.format("Doing Heap sort: Swap elements at position %d to the %s at position %d because %d less than %d", 
+	                    String.format("Heap sort: Swap elements at position %d to the %s at position %d because %d less than %d", 
 	                    		i, nxt, largest, getArray()[i], getArray()[largest]));
 			}
 			

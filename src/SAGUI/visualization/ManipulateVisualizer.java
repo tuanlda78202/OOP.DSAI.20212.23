@@ -95,7 +95,7 @@ public class ManipulateVisualizer {
     private JPanel controlsPane = new JPanel();
 
     // LABEL
-    private JLabel delayLabel = new JLabel("Speed :");
+    private JLabel delayLabel = new JLabel("Speed:");
     private JLabel speedLabel = new JLabel(speed + " ms");
     public JLabel comparedLabel = new JLabel("Comparisons: " + compared);
     public JLabel arrayAccessedLabel = new JLabel("Array Accessed: " + arrayAccessed);

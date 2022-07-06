@@ -2,6 +2,7 @@ package SAGUI.visualization;
 
 import SAGUI.data.Siri;
 import SAGUI.data.ValidData;
+import SAGUI.data.InitData;
 
 import java.awt.Color;
 import java.awt.Insets;
@@ -34,6 +35,7 @@ public class ManipulateVisualizer {
 
 	private ValidData validator = new ValidData();
 	private Siri helpers = new Siri();
+	private InitData initializers = new InitData();
 
 	private GraphVisualizer canvas;
 
@@ -670,18 +672,7 @@ public class ManipulateVisualizer {
                 switch (curInputDataOption) {
                     case 0: // random
                         length = Integer.parseInt(arrayLengthInput.getText());
-                        array = new int[length];
-                        for (int i = 0; i < length; i++) {
-                            array[i] = i + 1;
-                        }
-                        for (int a = 0; a < 500; a++) {
-                            for (int i = 0; i < length; i++) {
-                                int rand = r.nextInt(length);
-                                int temp = array[rand];
-                                array[rand] = array[i];
-                                array[i] = temp;
-                            }
-                        }
+                        array = new InitData().genRandomArr(length);
                         isSorting = false;
 
                         canvas.setLength(length);

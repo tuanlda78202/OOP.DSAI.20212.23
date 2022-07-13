@@ -45,9 +45,7 @@ public abstract class AbsSort implements swap {
         this.length = length;
     }
 
-    public void sort(int start, int end) {
-        System.out.println("Sort");
-    }
+    abstract public void sort(int start, int end);
 
     public boolean isIsSorting() {
         return isSorting;

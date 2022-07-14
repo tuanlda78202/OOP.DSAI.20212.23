@@ -5,7 +5,7 @@
 
 
 # Overview
-Array is the most basic structure of computer science. Most operations as well as other data structures are built and performed on an array. In this project, we make an application GUI to explain three sorting algorithms on an array: [bubble sort](https://www.geeksforgeeks.org/bubble-sort/), [heap sort](https://www.geeksforgeeks.org/heap-sort/), [shell sort](https://www.geeksforgeeks.org/shellsort/)
+Array is the most basic structure of computer science. Most operations as well as other data structures are built and performed on an array. In this project, we make an application GUI to explain three sorting algorithms on an array: [bubble sort, ](https://www.geeksforgeeks.org/bubble-sort/)[heap sort, ](https://www.geeksforgeeks.org/heap-sort/)[shell sort](https://www.geeksforgeeks.org/shellsort/)
 
 **Specifications**:
 

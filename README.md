@@ -32,10 +32,7 @@ Array is the most basic structure of computer science. Most operations as well a
 - `design`: Astal UML and image `.png` for use case & class diagram
 - `materials`: Mindmap `.xmind` and image `.png` store for project
 - `submit`: Report Word + Slide PowerPoint 
-- `src`: Store source code
-  - `src/data`: Data 
-  - `src/sorting`: Sorting
-  - `src/visualization`: Visualization GUI
+- `src`: Source code
 - `workflow.md`: GitHub WorkFlow
 
 ## Branching Model 

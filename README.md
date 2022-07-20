@@ -31,8 +31,7 @@ Array is the most basic structure of computer science. Most operations as well a
 ## Directories  
 - `design`: Astal UML and image `.png` for use case & class diagram
 - `materials`: Mindmap `.xmind` and image `.png` store for project
-- `presentation`: Slide PowerPoint and Video MP4 of project
-- `report`: Report Word & PDF
+- `submit`: Report Word + Slide PowerPoint 
 - `src`: Store source code
   - `src/data`: Data 
   - `src/sorting`: Sorting
